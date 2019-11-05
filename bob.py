@@ -17,6 +17,7 @@ def receive_coin(k=2):
             # Create a new qubit container
             pairs.append([None] * 2)
 
+            # Receive P and the qubit pair
             value = Bob.recvClassical()[0]
             q1 = Bob.recvQubit()
             q2 = Bob.recvQubit()
@@ -25,5 +26,11 @@ def receive_coin(k=2):
             print(value)
 
         sleep(1)
+
+def send_coins():
+    pass
+
 if __name__ == "__main__":
     receive_coin()
+
+    send_coins()

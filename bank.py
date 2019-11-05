@@ -73,11 +73,6 @@ def create_coin(k=2):
 
             print('Finished coin:', i)
 
-def send_coin(k=2):
-    print('Sending information to Bob')
-    with CQCConnection("Bank") as Bank:
-        # For each i-th coin
-        for i in range(k):
             # Send the identifier
             Bank.sendClassical("Bob", P[i])
             # Send first half of the two qubits
@@ -88,8 +83,8 @@ def send_coin(k=2):
             print('Sent Coin #', P[i])
             # Wait for receiver
             sleep(1)
-    # FLush memory
-    Bank.flush()
+        # FLush memory
+        Bank.flush()
 
 
 def parse_coin():
@@ -97,8 +92,5 @@ def parse_coin():
 
 if __name__ == "__main__":
     create_coin()
-    [print(x) for x in pairs]
-    send_coin()
-
 
     parse_coin()
