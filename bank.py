@@ -16,7 +16,7 @@ P = []
 
 def create_coin(k=2):
     print("First stage")
-    with CQCConnection("Bank") as Bank:
+    with CQCConnection("Alice") as Bank:
         # For each i-th coin
         for i in range(k):
             print("Creating the random number sequence")
